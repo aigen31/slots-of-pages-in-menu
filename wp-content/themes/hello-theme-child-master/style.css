@@ -1,0 +1,73 @@
+/* 
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme-child/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 2.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+.game-slot {
+    position: relative;
+}
+
+.game-slot__text {
+    font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+    font-weight: var(--e-global-typography-primary-font-weight);
+    line-height: 100%;
+    color: var(--e-global-color-accent);
+    padding: 13px 20px;
+}
+
+.game-slot__text::after {
+    content: "";
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.58, 0.3, 0.005, 1);
+    background-color: var(--e-global-color-accent);
+    bottom: 0;
+    height: 3px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: block;
+    position: absolute;
+    opacity: 0;
+}
+
+.game-slot__text:hover::after {
+    opacity: 1;
+}
+
+.game-slot__text:hover > .game-slot__menu {
+    display: block;
+}
+
+.game-slot__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.game-slot__menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-slot__menu li {
+    font-weight: 400;
+}
+
+.game-slot__menu a {
+    white-space: nowrap;
+    display: block;
+    padding: 13px 20px;
+}
