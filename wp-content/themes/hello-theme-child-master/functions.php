@@ -42,7 +42,10 @@ function child_pages_menu_shortcode()
 {
 	$page_id = get_the_ID();
 	$query = new WP_Query();
-	$all_wp_pages = $query->query(array('post_type' => 'page'));
+	$all_wp_pages = $query->query([
+		'post_type' => 'page',
+		'posts_per_page' => -1,
+	]);
 	$child_pages = get_page_children($page_id, $all_wp_pages);
 	$children = get_pages(array('child_of' => $page_id));
 
@@ -72,7 +75,10 @@ function child_pages_banner_shortcode()
 {
 	$page_id = get_the_ID();
 	$query = new WP_Query();
-	$all_wp_pages = $query->query(array('post_type' => 'page'));
+	$all_wp_pages = $query->query([
+		'post_type' => 'page',
+		'posts_per_page' => -1,
+	]);
 	$parent = wp_get_post_parent_id(get_the_ID());
 
 	if (!empty($parent)) {
